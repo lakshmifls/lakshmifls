@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>IndustrialHub — B2B Inventory Marketplace</title>
+  <meta name="description" content="B2B industrial inventory discovery and supplier enquiry marketplace.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Industrial<span>Hub</span></div>
+    <button id="basketBtn" class="basket">Enquiry Basket <b id="basketCount">0</b></button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">B2B INDUSTRIAL SOURCING</p>
+        <h1>Find industrial inventory faster.</h1>
+        <p class="hero-copy">Discover available products from industrial suppliers and send one consolidated enquiry.</p>
+      </div>
+      <div class="hero-card">
+        <strong id="productCount">0</strong>
+        <span>sample products</span>
+      </div>
+    </section>
+
+    <section class="toolbar">
+      <input id="search" type="search" placeholder="Search product, SKU, category or supplier…">
+      <select id="category"><option value="">All categories</option></select>
+      <select id="stock"><option value="">All stock status</option><option value="In Stock">In Stock</option><option value="Limited">Limited</option><option value="Made to Order">Made to Order</option></select>
+    </section>
+
+    <section id="catalog" class="catalog"></section>
+  </main>
+
+  <aside id="basketPanel" class="panel" aria-hidden="true">
+    <div class="panel-head"><h2>Your enquiry</h2><button id="closeBasket">×</button></div>
+    <div id="basketItems"></div>
+    <form id="enquiryForm">
+      <input name="company" required placeholder="Company name">
+      <input name="contact" required placeholder="Contact person">
+      <input name="email" type="email" required placeholder="Business email">
+      <textarea name="message" placeholder="Requirement / quantity / delivery location"></textarea>
+      <button class="primary" type="submit">Send Enquiry</button>
+    </form>
+    <p id="formResult" class="success"></p>
+  </aside>
+
+  <div id="overlay" class="overlay"></div>
+  <script src="app.js"></script>
+</body>
+</html>
